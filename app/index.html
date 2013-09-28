@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+  <div class="gameBoard">
+
+    <div ng-controller="GhostController">
+    {{pulseToggle}}
+      <div>{{game.score}} haunted rooms</div>
+      <div><img ng-click="clickGhost()" pulse-animate="pulseToggle"  src="img/ghost.png" /></div>
+
+    
+
+
+
+      <div mouse-click-down mouse-click-up> I'm content</div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+  <p ng-class='{"animated pulse":pulse==true}'></p>
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+
+
+</body>
+</html>
