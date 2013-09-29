@@ -42,3 +42,7 @@ body {
 .extras.unavailable {
   opacity: 0.5;
 }
+
+.info {
+  font-size: 12px;
+}

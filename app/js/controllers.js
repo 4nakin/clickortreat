@@ -4,6 +4,7 @@
 
 angular.module('myApp.controllers', []).
   controller('GhostController', ['$scope',function($scope) {
+    var WITCH_PRICE = 20;
     $scope.game = {'score': 0, 'witches': 0, 'autoincrementpersecond': 0}
 
     $scope.pulseToggle = false
@@ -23,9 +24,11 @@ angular.module('myApp.controllers', []).
         addScore(1);
     }
     $scope.clickWitch = function() {
-        subtractScore(20);
-        $scope.game['witches'] += 1;
-        $scope.game['autoincrementpersecond'] += 0.1;
+        if ($scope.game['score'] > WITCH_PRICE) {
+            subtractScore(WITCH_PRICE);
+            $scope.game['witches'] += 1;
+            $scope.game['autoincrementpersecond'] += 0.1;
+        }
     }
 
 

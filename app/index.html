@@ -13,6 +13,7 @@
     <div class="row">
       <div class="col-md-8">
         <div>{{game.score | chopdecimal}} haunted rooms</div>
+        <div class="info">{{game.autoincrementpersecond |number:2}} hauntings per second</div>
         <div><img ng-click="clickGhost()" pulse-animate="pulseToggle" src="img/ghost.png" /></div>
       </div>
       <div class="col-md-4">
