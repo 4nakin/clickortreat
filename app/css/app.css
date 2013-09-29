@@ -39,3 +39,6 @@ body {
   animation-name: pulse;
 }
 
+.extras.unavailable {
+  opacity: 0.5;
+}

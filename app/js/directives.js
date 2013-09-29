@@ -1,8 +1,6 @@
 'use strict';
 
 /* Directives */
-
-
 angular.module('myApp.directives', []).
   directive('pulseAnimate', [function() {
     return function(scope, elm, attrs) {

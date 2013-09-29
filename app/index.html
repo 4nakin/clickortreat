@@ -3,15 +3,21 @@
 <head>
   <meta charset="utf-8">
   <title>My AngularJS App</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
   <div class="gameBoard">
 
     <div ng-controller="GhostController">
-      <div>{{game.score}} haunted rooms</div>
-      <div><img ng-click="clickGhost()" pulse-animate="pulseToggle"  src="img/ghost.png" /></div>
-
+    <div class="row">
+      <div class="col-md-8">
+        <div>{{game.score | chopdecimal}} haunted rooms</div>
+        <div><img ng-click="clickGhost()" pulse-animate="pulseToggle" src="img/ghost.png" /></div>
+      </div>
+      <div class="col-md-4">
+        <div class="extras" ng-class="{unavailable: game.score < 20}" ng-click="clickWitch()"><img src="img/witch_thumb.png" /> Witch {{ game.witches }}</div>
+      </div>
     </div>
 
 
