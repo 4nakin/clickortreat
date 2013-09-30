@@ -4,8 +4,10 @@
 
 angular.module('myApp.controllers', []).
   controller('GhostController', ['$scope',function($scope) {
-    var WITCH_PRICE = 20;
-    $scope.game = {'score': 0, 'witches': 0, 'autoincrementpersecond': 0}
+
+    $scope.game = {score: 0, autoclick: 0}
+    $scope.game['products'] = [{name:'witches', image:'img/witch_thumb.png', price:20, bought:0, persecond: 0.1},
+                                {name: 'pumpkins', image:'img/pumpkin_thumb.png', price:50, bought:0, persecond: 1}]
 
     $scope.pulseToggle = false
     
@@ -16,27 +18,25 @@ angular.module('myApp.controllers', []).
     function subtractScore(price) {
         $scope.game['score'] = $scope.game['score'] - price
     }
-    function changePulse(){
-        $scope.$apply(function(){$scope.pulse = !$scope.pulse;});
-    }
+
     $scope.clickGhost = function(){
         $scope.pulseToggle = !$scope.pulseToggle
         addScore(1);
     }
-    $scope.clickWitch = function() {
-        if ($scope.game['score'] > WITCH_PRICE) {
-            subtractScore(WITCH_PRICE);
-            $scope.game['witches'] += 1;
-            $scope.game['autoincrementpersecond'] += 0.1;
+
+     $scope.clickProduct = function(product) {
+        if ($scope.game.score >= product.price) {
+            subtractScore(product.price);
+            product.bought += 1;
+            product.price += Math.floor(product.price * 10/100)
+            $scope.game.autoclick += product.persecond;
         }
     }
 
 
-
-
     setInterval(function(){
         $scope.$apply(function() {
-            addScore($scope.game['autoincrementpersecond']);
+            addScore($scope.game['autoclick']);
         });
     }, 1000);
 
