@@ -10,26 +10,31 @@
   <div class="gameBoard">
 
     <div ng-controller="GhostController">
-    <div class="row">
-      <div class="col-md-8">
-        <div>{{game.score | chopdecimal}} haunted rooms</div>
-        <div class="info">{{game.autoincrementpersecond |number:2}} hauntings per second</div>
-        <div><img ng-click="clickGhost()" pulse-animate="pulseToggle" src="img/ghost.png" /></div>
-      </div>
-      <div class="col-md-4">
-        <div class="extras" ng-class="{unavailable: game.score < 20}" ng-click="clickWitch()"><img src="img/witch_thumb.png" /> Witch {{ game.witches }}</div>
+      <div class="row">
+          <div class="col-md-8">
+            <div>{{game.score | chopdecimal}} haunted rooms</div>
+            <div class="info">{{game.autoclick |number:2}} hauntings per second</div>
+            <div><img ng-click="clickGhost()" pulse-animate="pulseToggle" src="img/ghost.png" /></div>
+          </div>
+
+          <div class="col-md-3 " style="border:1px solid red;">
+              <div class="row extras" ng-class="{unavailable: game.score < product.price}" ng-click="clickProduct(product)" ng-repeat="product in game.products">
+                  <div class="col-sm-4">
+                      <p><img ng-src="{{product.image}}" /></p>
+                  </div>
+                  <div class="col-sm-5">
+                      <p >{{product.name}}</p>
+                  </div>
+                  <div class="col-sm-3">
+                      <p >{{product.bought}}</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-1"></div>
       </div>
     </div>
 
-
-
-
-
-
-
-  </div>
-
-  <p ng-class='{"animated pulse":pulse==true}'></p>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->
