@@ -22,11 +22,14 @@
                   <div class="col-sm-4">
                       <p><img ng-src="{{product.image}}" /></p>
                   </div>
-                  <div class="col-sm-5">
-                      <p >{{product.name}}</p>
+                  <div class="col-sm-5 product">
+                      <p class="text-left">{{product.name}} <br />
+                      {{product.price}}</p>
                   </div>
                   <div class="col-sm-3">
-                      <p >{{product.bought}}</p>
+                      <p style="text-align:right;">{{product.bought}}</p>
+
+
                   </div>
               </div>
           </div>
