@@ -2,34 +2,54 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
-  <title>My AngularJS App</title>
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/app.css"/>
+  <title>Click or Treat</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
-  <div class="gameBoard">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Click or Treat</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+  <div class=" container gameBoard">
 
     <div ng-controller="GhostController">
       <div class="row">
-          <div class="col-md-8">
-            <div>{{game.score | chopdecimal}} haunted rooms</div>
-            <div class="info">{{game.autoclick |number:2}} hauntings per second</div>
-            <div><img ng-click="clickGhost()" pulse-animate="pulseToggle" src="img/ghost.png" /></div>
+          <div class="col-md-8 mainscore">
+            <div>{{game.score | chopdecimal | number }} haunted rooms</div>
+            <div class="info">{{game.autoclick*10 |number:2}} hauntings per second</div>
+            <div><img class="ghost" ng-click="clickGhost()" pulse-animate="pulseToggle" src="img/ghost.png" /></div>
+            <div>    <a href="https://twitter.com/intent/tweet?button_hashtag=clickortreat&text=I'm%20addicted%20to%20click or%20treat%20http://clickortreat.in" class="twitter-hashtag-button" data-lang="en" data-related="jasoncosta">Tweet #TwitterStories</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
           </div>
 
-          <div class="col-md-3 " style="border:1px solid red;">
+          <div class="col-md-3 " >
               <div class="row extras" ng-class="{unavailable: game.score < product.price}" ng-click="clickProduct(product)" ng-repeat="product in game.products">
                   <div class="col-sm-4">
                       <p><img ng-src="{{product.image}}" /></p>
                   </div>
                   <div class="col-sm-5 product">
                       <p class="text-left">{{product.name}} <br />
-                      {{product.price}}</p>
+                      {{product.price | number}}</p>
                   </div>
                   <div class="col-sm-3">
                       <p style="text-align:right;">{{product.bought}}</p>
-
-
                   </div>
               </div>
           </div>

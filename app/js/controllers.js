@@ -6,18 +6,18 @@ angular.module('myApp.controllers', []).
   controller('GhostController', ['$scope',function($scope) {
 
     $scope.game = {score: 0, autoclick: 0}
-    $scope.game['products'] = [ {name: 'Witch', image:'img/witch_thumb.png', price:13, bought:0, persecond: 0.1, increase: 0.1},
-                                {name: 'Pumpkin', image:'img/pumpkin_thumb.png', price:66, bought:0, persecond: 1, increase: 0.08},
-                                {name: 'Scarecrow', image:'img/scarecrow_thumb.png', price:132, bought:0, persecond: 10, increase: 0.15},
-                                {name: 'Cat', image:'img/cat_thumb.png', price:666, bought:0, persecond: 50, increase: 0.08},
-                                {name: 'Coffin', image:'img/coffin_thumb.png', price:1408, bought:0, persecond: 132, increase: 0.13},
-                                {name: 'Wolf', image:'img/wolf_thumb.png', price:5000, bought:0, persecond: 300, increase: 0.1},
-                                {name: 'Tombstone', image:'img/tombstone_thumb.png', price:12500, bought:0, persecond: 9000, increase: 0.09},
-                                {name: 'Mummy', image:'img/mummy_thumb.png', price:66666, bought:0, persecond: 15000, increase: 0.1},
-                                {name: 'Bat', image:'img/bat_thumb.png', price:1000000, bought:0, persecond: 200000, increase: 0.15},
-                                {name: 'Spider Web', image:'img/spider_web_thumb.png', price:1500000, bought:0, persecond: 500000, increase: 0.08},
-                                {name: 'Skeleton', image:'img/skeleton_thumb.png', price:3000000, bought:0, persecond: 666666, increase: 0.1},
-                                {name: 'Haunted House', image:'img/haunted_house_thumb.png', price:6666666, bought:0, persecond: 1000000, increase: 0.05}
+    $scope.game['products'] = [ {name: 'Witch', image:'img/witch_thumb.png', price:13, bought:0, persecond: 0.1, increase: 0.5},
+                                {name: 'Pumpkin', image:'img/pumpkin_thumb.png', price:66, bought:0, persecond: 1, increase: 0.42},
+                                {name: 'Scarecrow', image:'img/scarecrow_thumb.png', price:132, bought:0, persecond: 10, increase: 0.4},
+                                {name: 'Cat', image:'img/cat_thumb.png', price:666, bought:0, persecond: 50, increase: 0.38},
+                                {name: 'Coffin', image:'img/coffin_thumb.png', price:1408, bought:0, persecond: 132, increase: 0.33},
+                                {name: 'Wolf', image:'img/wolf_thumb.png', price:132000, bought:0, persecond: 300, increase: 0.4},
+                                {name: 'Tombstone', image:'img/tombstone_thumb.png', price:666013, bought:0, persecond: 9000, increase: 0.59},
+                                {name: 'Mummy', image:'img/mummy_thumb.png', price:6666666, bought:0, persecond: 15000, increase: 0.6},
+                                {name: 'Bat', image:'img/bat_thumb.png', price:13313131, bought:0, persecond: 200000, increase: 0.45},
+                                {name: 'Spider Web', image:'img/spider_web_thumb.png', price:66666666, bought:0, persecond: 500000, increase: 0.59},
+                                {name: 'Skeleton', image:'img/skeleton_thumb.png', price:313131313, bought:0, persecond: 666666, increase: 0.7},
+                                {name: 'Haunted House', image:'img/haunted_house_thumb.png', price:6666666666, bought:0, persecond: 1000000, increase: 0.6}
                                ]
 
     $scope.pulseToggle = false
@@ -31,7 +31,7 @@ angular.module('myApp.controllers', []).
     }
 
     function incrementAutoclick(adder) {
-        $scope.game.autoclick += adder;
+        $scope.game.autoclick += adder / 10;
     }
 
     $scope.clickGhost = function(){
@@ -54,6 +54,6 @@ angular.module('myApp.controllers', []).
         $scope.$apply(function() {
             addScore($scope.game['autoclick']);
         });
-    }, 1000);
+    }, 100);
 
   }]);
