@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-  controller('GhostController', ['$scope',function($scope) {
+  controller('GhostController', ['$scope', '$cookies',function($scope, $cookies) {
 
     $scope.game = {score: 0, autoclick: 0}
     $scope.game['products'] = [ {name: 'Witch', image:'img/witch_thumb.png', price:13, bought:0, persecond: 0.1, increase: 0.5},
@@ -21,6 +21,16 @@ angular.module('myApp.controllers', []).
                                ]
 
     $scope.pulseToggle = false
+
+    if ($cookies.currentScore){
+        $scope.game.score = $cookies.currentScore;
+        $scope.game.autoclick = $cookies.currentAutoclick;
+    }
+
+    function setCookie() {
+        $cookies.currentScore = $scope.game.score;
+        $cookies.currentAutoclick = $scope.game.autoclick;
+    }
     
     function addScore(amount){
         $scope.game['score'] += amount; //= $scope.game['score'] + 1
@@ -49,10 +59,16 @@ angular.module('myApp.controllers', []).
         }
     }
 
+    setInterval(function(){
+        $scope.$apply(function() {
+            setCookie();
+            console.log("saved");
+        });
+    }, 120000)
 
     setInterval(function(){
         $scope.$apply(function() {
-            addScore($scope.game['autoclick']);
+            addScore($scope.game.autoclick);
         });
     }, 100);
 
