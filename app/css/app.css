@@ -4,7 +4,7 @@ body {
   /*font-size: 25px;*/
   color: #eee;
 }
-
+.little {width:290px;}
 .gameBoard {
   margin-top: 60px;
   text-align: center;
