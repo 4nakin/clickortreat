@@ -29,6 +29,8 @@
   <div class=" container gameBoard">
 
     <div ng-controller="GhostController">
+        <button ng-click="createCookie()">Cookie</button>
+        <button ng-click="getCookie()">Get Cookie</button>
       <div class="row">
           <div class="col-md-8 mainscore">
             <div>{{game.score | chopdecimal | number }} haunted rooms</div>
