@@ -22,14 +22,25 @@ angular.module('myApp.controllers', []).
 
     $scope.pulseToggle = false
 
-    if ($cookies.currentScore){
-        $scope.game.score = $cookies.currentScore;
-        $scope.game.autoclick = $cookies.currentAutoclick;
+    $scope.getCookie = function() {
+        console.log('here');
+        console.log($cookies);
+    }
+    $scope.createCookie = function() {
+        
+        $cookies.ting = 'hi there';
+
+        console.log($cookies.ting);
+        console.log('done');
+        setCookie();
+    }
+    
+    if ($cookies.game) {
+        $scope.game = angular.fromJson($cookies.game);
     }
 
     function setCookie() {
-        $cookies.currentScore = $scope.game.score;
-        $cookies.currentAutoclick = $scope.game.autoclick;
+        $cookies.game = angular.toJson($scope.game);
     }
     
     function addScore(amount){
