@@ -29,17 +29,17 @@
   <div class=" container gameBoard">
 
     <div ng-controller="GhostController">
-        <button ng-click="createCookie()">Cookie</button>
-        <button ng-click="getCookie()">Get Cookie</button>
       <div class="row">
           <div class="col-md-8 mainscore">
-            <div>{{game.score | chopdecimal | number }} haunted rooms</div>
+            <div>{{game.score | chopdecimal | number }} people haunted</div>
             <div class="info">{{game.autoclick*10 |number:2}} hauntings per second</div>
-            <div ng-mousedown="smallGhost=true" ng-mouseup="smallGhost=false"><img ng-class="{'little':smallGhost}" class="ghost" ng-click="clickGhost()" pulse-animate="pulseToggle" src="img/ghost.png" /></div>
-            <div>    <a href="https://twitter.com/intent/tweet?button_hashtag=clickortreat&text=I'm%20addicted%20to%20click or%20treat%20http://clickortreat.in" class="twitter-hashtag-button" data-lang="en" data-related="jasoncosta">Tweet #TwitterStories</a>
+            <div><a href="https://twitter.com/intent/tweet?button_hashtag=clickortreat&text=I'm%20addicted%20to%20click or%20treat%20http://clickortreat.in" class="twitter-hashtag-button" data-lang="en" data-related="jasoncosta">Tweet #TwitterStories</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</div>
-          </div>
+            </div>
+            <div ng-mousedown="smallGhost=true" ng-mouseup="smallGhost=false">
+                <img ng-class="{'little':smallGhost}" class="ghost" ng-click="clickGhost()" src="img/ghost.png" />
+            </div>
+                      </div>
 
           <div class="col-md-3 " >
               <div class="row extras" ng-class="{unavailable: game.score < product.price}" ng-click="clickProduct(product)" ng-repeat="product in game.products">
@@ -63,7 +63,6 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-cookies.js"></script>
 
