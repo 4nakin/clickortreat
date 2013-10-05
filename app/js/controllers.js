@@ -20,21 +20,6 @@ angular.module('myApp.controllers', []).
                                 {name: 'Haunted House', image:'img/haunted_house_thumb.png', price:6666666666, bought:0, persecond: 1000000, increase: 0.6}
                                ]
 
-    $scope.pulseToggle = false
-
-    $scope.getCookie = function() {
-        console.log('here');
-        console.log($cookies);
-    }
-    $scope.createCookie = function() {
-        
-        $cookies.ting = 'hi there';
-
-        console.log($cookies.ting);
-        console.log('done');
-        setCookie();
-    }
-    
     if ($cookies.game) {
         $scope.game = angular.fromJson($cookies.game);
     }
@@ -75,7 +60,7 @@ angular.module('myApp.controllers', []).
             setCookie();
             console.log("saved");
         });
-    }, 120000)
+    }, 60000)
 
     setInterval(function(){
         $scope.$apply(function() {
