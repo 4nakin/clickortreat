@@ -6,8 +6,11 @@ body {
 }
 .little {width:290px;}
 .gameBoard {
-  margin-top: 60px;
   text-align: center;
+}
+
+.mainContent {
+    margin-top: 60px;
 }
 
 .mainscore {
