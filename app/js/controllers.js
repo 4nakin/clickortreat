@@ -5,6 +5,7 @@
 angular.module('myApp.controllers', []).
   controller('GhostController', ['$scope', '$cookies',function($scope, $cookies) {
 
+    $scope.saving = false;
     $scope.game = {score: 0, autoclick: 0}
     $scope.game['products'] = [ {name: 'Witch', image:'img/witch_thumb.png', price:13, bought:0, persecond: 0.1, increase: 0.5},
                                 {name: 'Pumpkin', image:'img/pumpkin_thumb.png', price:66, bought:0, persecond: 1, increase: 0.42},
@@ -55,10 +56,15 @@ angular.module('myApp.controllers', []).
         }
     }
 
+    function saveComplete(){
+        $scope.saving = false;
+    }
     setInterval(function(){
         $scope.$apply(function() {
             setCookie();
             console.log("saved");
+            $scope.saving = true;
+            setTimeout(saveComplete, 2000);
         });
     }, 60000)
 
