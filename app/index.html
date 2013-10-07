@@ -19,46 +19,16 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li class="active"><a href="#/game">Home</a></li>
+            <li><a href="#/about">About</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 
-  <div class=" container gameBoard">
+    <div ng-view></div>
 
-    <div ng-controller="GhostController">
-      <div class="row">
-          <div class="col-md-8 mainscore">
-            <div>{{game.score | chopdecimal | number }} people haunted</div>
-            <div class="info">{{game.autoclick*10 |number:2}} hauntings per second</div>
-            <div><a href="https://twitter.com/intent/tweet?button_hashtag=clickortreat&text=I'm%20addicted%20to%20click or%20treat%20http://clickortreat.in" class="twitter-hashtag-button" data-lang="en" data-related="jasoncosta">Tweet #TwitterStories</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            </div>
-            <div ng-mousedown="smallGhost=true" ng-mouseup="smallGhost=false">
-                <img ng-class="{'little':smallGhost}" class="ghost" ng-click="clickGhost()" src="img/ghost.png" />
-            </div>
-                      </div>
 
-          <div class="col-md-3 " >
-              <div class="row extras" ng-class="{unavailable: game.score < product.price}" ng-click="clickProduct(product)" ng-repeat="product in game.products">
-                  <div class="col-sm-4">
-                      <p><img ng-src="{{product.image}}" /></p>
-                  </div>
-                  <div class="col-sm-5 product">
-                      <p class="text-left">{{product.name}} <br />
-                      {{product.price | number}}</p>
-                  </div>
-                  <div class="col-sm-3">
-                      <p style="text-align:right;">{{product.bought}}</p>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-md-1"></div>
-      </div>
-    </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
