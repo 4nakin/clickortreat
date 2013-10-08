@@ -3,9 +3,16 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
+  controller('ResetController', ['$scope', '$cookies','$location', function($scope, $cookies, $location){
+    $scope.resetCookie = function() {
+        delete $cookies.game;
+        $location.path('/');
+        console.log('delete cookie');
+    }
+          }]).
   controller('GhostController', ['$scope', '$cookies',function($scope, $cookies) {
 
-    $scope.saving = false;
+    //$scope.saving = false;
     $scope.game = {score: 0, autoclick: 0}
     $scope.game['products'] = [ {name: 'Witch', image:'img/witch_thumb.png', price:13, bought:0, persecond: 0.1, increase: 0.5},
                                 {name: 'Pumpkin', image:'img/pumpkin_thumb.png', price:66, bought:0, persecond: 1, increase: 0.42},
@@ -27,6 +34,7 @@ angular.module('myApp.controllers', []).
 
     function setCookie() {
         $cookies.game = angular.toJson($scope.game);
+        console.log('set cookie');
     }
     
     function addScore(amount){

@@ -24,7 +24,7 @@
             <div ng-mousedown="smallGhost=true" ng-mouseup="smallGhost=false">
                 <img ng-class="{'little':smallGhost}" class="ghost" ng-click="clickGhost()" src="img/ghost.png" />
             </div>
-            <div ng-show="saving" ng-animate="{show:'fade-show', hide: 'fade-hide'}"><h3>Game Saved</h3></div>
+            <div ng-cloak ng-show="saving" ng-animate="{show:'fade-show', hide: 'fade-hide'}"><h3>Game Saved</h3></div>
       </div>
 
           <div class="col-md-3 " >

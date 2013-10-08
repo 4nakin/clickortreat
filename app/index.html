@@ -22,8 +22,8 @@
                         <li ng-class="{active: title=='Game'}"><a href="#/game">Home</a></li>
                         <li ng-class="{active: title=='About'}"><a  href="#/about">About</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right">
-                        <button class="btn btn-warning">Clear</button>
+                    <form ng-controller="ResetController" class="navbar-form navbar-right">
+                        <button class="btn btn-default" ng-click="resetCookie()">Clear</button>
                     </form>
                 </div><!--/.nav-collapse -->
             </div>
