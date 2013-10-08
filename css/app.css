@@ -1,0 +1,68 @@
+/* app css stylesheet */
+body {
+  background: #262626;
+  /*font-size: 25px;*/
+  color: #eee;
+}
+.little {width:290px;}
+.gameBoard {
+  text-align: center;
+}
+
+.mainContent {
+    margin-top: 60px;
+}
+
+.mainscore {
+  font-size: 30px;
+}
+.ghost {
+  cursor:pointer;
+}
+
+.extras {
+  font-size:18px;
+  cursor: pointer;
+}
+
+.extras:hover {
+  background-color: #323843;
+}
+.extras.unavailable {
+  opacity: 0.5;
+  cursor:default;
+}
+
+.info {
+  font-size: 12px;
+}
+
+.fade-hide, .fade-show {
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.0s;
+    -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.0s;
+    -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.0s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.0s;
+}
+
+.fade-hide {
+    opacity:1;
+}
+.fade-hide.fade-hide-active {
+    opacity:0;
+}
+
+.fade-show {
+    opacity:0;
+}
+.fade-show.fade-show-active {
+    opacity:1;
+}
+.social {
+    display: inline-block;
+    list-style:none;
+    padding-left:0;
+}
+.social li {
+    display: inline-block;
+    padding: 2px 20px;
+}
