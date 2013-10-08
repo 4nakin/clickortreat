@@ -7,7 +7,6 @@ angular.module('myApp.controllers', []).
     $scope.resetCookie = function() {
         delete $cookies.game;
         $location.path('/');
-        console.log('delete cookie');
     }
           }]).
   controller('GhostController', ['$scope', '$cookies',function($scope, $cookies) {
@@ -34,7 +33,6 @@ angular.module('myApp.controllers', []).
 
     function setCookie() {
         $cookies.game = angular.toJson($scope.game);
-        console.log('set cookie');
     }
     
     function addScore(amount){
@@ -70,7 +68,6 @@ angular.module('myApp.controllers', []).
     setInterval(function(){
         $scope.$apply(function() {
             setCookie();
-            console.log("saved");
             $scope.saving = true;
             setTimeout(saveComplete, 2000);
         });
