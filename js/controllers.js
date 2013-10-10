@@ -6,7 +6,7 @@ angular.module('myApp.controllers', []).
   controller('ResetController', ['$scope', '$cookies','$location', function($scope, $cookies, $location){
     $scope.resetCookie = function() {
         delete $cookies.game;
-        $location.path('/');
+        $location.path('#/');
     }
           }]).
   controller('GhostController', ['$scope', '$cookies',function($scope, $cookies) {
