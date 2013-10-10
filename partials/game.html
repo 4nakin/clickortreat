@@ -2,7 +2,9 @@
     <div ng-controller="GhostController">
       <div class="row">
           <div class="col-md-8 mainscore">
-            <div>{{game.score | chopdecimal | number }} people haunted</div>
+            <div>{{game.score | chopdecimal | number }} <ng-pluralize count="game.score | chopdecimal | number"
+                                                          when="{'0': 'person haunted',
+                                                          'other': ' people haunted'}"></ng-pluralize></div>
             <div class="info">{{game.autoclick*10 |number:2}} hauntings per second</div>
             <div>
                 <ul class="social">
