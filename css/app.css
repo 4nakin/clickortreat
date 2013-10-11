@@ -8,6 +8,8 @@ body {
 
 .title {
   font-family: 'Henny Penny', "Open Sans",Helvetica,Arial,sans-serif;
+  font-size:25px;
+}
 
 .little {width:290px;}
 .gameBoard {
