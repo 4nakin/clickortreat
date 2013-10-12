@@ -14,16 +14,15 @@ angular.module('myApp.controllers', []).
     //$scope.saving = false;
     $scope.game = {score: 0, autoclick: 0}
 
-    $http.get('js/products.js').success(function(data) {
-      
-      $scope.game['products'] = data;
-    });
-
-    console.log('----');
+    
     if ($cookies.game) {
         $scope.game = angular.fromJson($cookies.game);
+    } else {
+      $http.get('js/products.js').success(function(data) {
+        $scope.game['products'] = data;
+      });
     }
-
+    
     function setCookie() {
         $cookies.game = angular.toJson($scope.game);
     }
