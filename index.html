@@ -26,7 +26,7 @@
                         <li ng-class="{active: title=='About'}"><a  href="#/about">About</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                      <li><a ng-click="resetCookie()" href="#/">Reset</a></li>  
+                      <li ng-controller="ResetController"><a ng-click="resetCookie()" href="#/">Reset</a></li>  
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
