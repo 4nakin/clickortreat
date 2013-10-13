@@ -1,5 +1,8 @@
   <div class=" container mainContent gameBoard">
     <div>      
+      <button ng-click="setty()">SETTY</button>
+      <button ng-click="getty()">GETTY</button>
+      
       <div class="row">
           <div class="col-md-8 mainscore">
             <div>{{game.score | chopdecimal | number }} <ng-pluralize count="game.score | chopdecimal | number"
