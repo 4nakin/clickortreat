@@ -23,7 +23,7 @@ body {
 .mainscore {
   font-size: 30px;
 }
-.ghost {
+.ghost, resetlink {
   cursor:pointer;
 }
 
