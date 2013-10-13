@@ -25,6 +25,9 @@
                         <li ng-class="{active: title=='Game'}"><a href="#/">Home</a></li>
                         <li ng-class="{active: title=='About'}"><a  href="#/about">About</a></li>
                     </ul>
+                    <ul class="navbar-right">
+                      <li><a ng-click="resetCookie()" href="#/">Reset</a></li>  
+                    </ul>  
                     <form ng-controller="ResetController" class="navbar-form navbar-right">
                         <button class="btn btn-default" ng-click="resetCookie()">Clear</button>
                     </form>
