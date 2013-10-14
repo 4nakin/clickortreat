@@ -85,11 +85,10 @@ body {
 
 }
 .content-section h2, .content-section h3 {
-    color: #F0E9D3;
     opacity: 0.8;
 }
 .content-section h2 {
-  border-bottom: 1px solid #FF3452;
+  border-bottom: 1px solid #CA965D;
 }
 
 .footer a, .footer a:hover, .footer a:visited, .content-section a, .content-section a:hover, .content-section a:visited {
