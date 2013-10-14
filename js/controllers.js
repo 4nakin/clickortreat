@@ -11,11 +11,9 @@ angular.module('myApp.controllers', []).
           }]).
   controller('GhostController', ['$scope', '$http', '$cookies',function($scope, $http, $cookies) {
 
-    
-    //$scope.saving = false;
     $scope.game = {score: 0, autoclick: 0}
 
-    
+   
     if ($cookies.game) {
         $scope.game = angular.fromJson($.cookie('game'));
     } else {
