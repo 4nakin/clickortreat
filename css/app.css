@@ -92,9 +92,11 @@ body {
   border-bottom: 1px solid #FF3452;
 }
 
-.content-section a, .content-section a:hover, .content-section a:visited {
+.footer a, .footer a:hover, .footer a:visited, .content-section a, .content-section a:hover, .content-section a:visited {
  color: #CA965D; 
  text-decoration: none;
 }
+
+
 
 
