@@ -1,11 +1,11 @@
   <div class=" container mainContent gameBoard">
-    <div>      
       <div class="row">
           <div class="col-md-8 mainscore">
             <div>{{game.score | chopdecimal | number }} <ng-pluralize count="game.score | chopdecimal"
                                                           when="{'0': 'people haunted',
                                                           '1': ' person haunted',
-                                                          'other': ' people haunted'}"></ng-pluralize></div>
+                                                          'other': ' people haunted'}"></ng-pluralize>
+            </div>
             <div class="info">{{game.autoclick*10 |number:2}} hauntings per second</div>
             <div>
                 <ul class="social">
@@ -27,11 +27,11 @@
                 <img ng-class="{'little':smallGhost}" class="ghost" ng-click="clickGhost()" src="img/ghost.png" />
             </div>
             <div ng-cloak ng-show="saving" ng-animate="{show:'fade-show', hide: 'fade-hide'}"><h3>Game Saved</h3></div>
-      </div>
+          </div> <!-- col-md-8 -->
 
           <div class="col-md-3 " >
               <div class="row extras" ng-class="{unavailable: game.score < product.price}" ng-click="clickProduct(product)" ng-repeat="product in game.products">
-                <div class="col-sm-4">
+                  <div class="col-sm-4">
                       <p><img ng-src="{{product.image}}" /></p>
                   </div>
                   <div class="col-sm-5 product">
@@ -41,9 +41,9 @@
                   <div class="col-sm-3">
                       <p style="text-align:right;">{{product.bought}}</p>
                   </div>
-              </div>
-          </div>
+              </div> <!-- row extras -->
+          </div> <!-- col-md-3 -->
 
           <div class="col-md-1"></div>
-      </div>
-    </div>
+      </div><!-- row -->
+    </div><!-- gameboard -->
