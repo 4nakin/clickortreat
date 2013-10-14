@@ -2,7 +2,7 @@
     <div>      
       <div class="row">
           <div class="col-md-8 mainscore">
-            <div>{{game.score | chopdecimal | number }} <ng-pluralize count="game.score | chopdecimal | number"
+            <div>{{game.score | chopdecimal | number }} <ng-pluralize count="game.score | chopdecimal"
                                                           when="{'0': 'people haunted',
                                                           '1': ' person haunted',
                                                           'other': ' people haunted'}"></ng-pluralize></div>

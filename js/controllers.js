@@ -11,20 +11,18 @@ angular.module('myApp.controllers', []).
           }]).
   controller('GhostController', ['$scope', '$http', '$cookies',function($scope, $http, $cookies) {
 
-    //$scope.saving = false;
     $scope.game = {score: 0, autoclick: 0}
-
-    
+ 
     if ($cookies.game) {
-        $scope.game = angular.fromJson($cookies.game);
+        $scope.game = angular.fromJson($.cookie('game'));
     } else {
-      $http.get('js/products.js').success(function(data) {
-        $scope.game['products'] = data;
-      });
+        $http.get('js/products.js').success(function(data) {
+          $scope.game['products'] = data;
+        });
     }
     
     function setCookie() {
-        $cookies.game = angular.toJson($scope.game);
+        $.cookie('game', angular.toJson($scope.game), {expires:365});
     }
     
     function addScore(amount){
