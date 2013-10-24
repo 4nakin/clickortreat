@@ -11,6 +11,10 @@ angular.module('myApp', ['ngCookies', 'myApp.filters', 'myApp.services', 'myApp.
             $routeProvider.when('/about', 
                 {templateUrl: 'partials/about.html',
                  title: 'About'});
+            $routeProvider.when('/halloween-soundboard',
+                 {templateUrl: 'partials/soundboard.html',
+                  title: 'Halloween Soundboard',
+                  controller: 'SoundboardController'});
             $routeProvider.otherwise({redirectTo: '/'});
             }]).
     run(['$location', '$rootScope', function($location, $rootScope) {

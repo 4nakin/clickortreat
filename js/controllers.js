@@ -10,14 +10,11 @@ angular.module('myApp.controllers', []).
     }
           }]).
   controller('GhostController', ['$scope', '$http', '$cookies',function($scope, $http, $cookies) {
-
-    $scope.game = {score: 0, autoclick: 0}
-
-   
     if ($cookies.game) {
         $scope.game = angular.fromJson($.cookie('game'));
     } else {
         $http.get('js/products.js').success(function(data) {
+          $scope.game = {score: 0, autoclick: 0}
           $scope.game['products'] = data;
         });
     }
@@ -70,4 +67,27 @@ angular.module('myApp.controllers', []).
         });
     }, 100);
 
+  }]).
+  controller('SoundboardController', ['$scope', '$document', function($scope, $document) {
+    $scope.sounds = [ {"name": "Bubbling", "mp3": "sounds/bubbling.mp3", "ogg": "sounds/bubbling.ogg" },
+                      {"name": "Witch", "mp3": "sounds/cackling.mp3", "ogg": "sounds/cackling.ogg" },
+                       {"name": "Spooky Door", "mp3": "sounds/doorsqueak.mp3", "ogg": "sounds/doorsqueak.ogg" },
+                       {"name": "Other World", "mp3": "sounds/erieghosts.mp3", "ogg": "sounds/erieghosts.ogg" },
+                       {"name": "Funny Ghost", "mp3": "sounds/ghost.mp3", "ogg": "sounds/ghost.ogg" },
+                       {"name": "Lost Soul", "mp3": "sounds/lost-souls.mp3", "ogg": "sounds/lost-souls.ogg" },
+                       {"name": "AaaaOww", "mp3": "sounds/loudscream.mp3", "ogg": "sounds/loudscream.ogg" },
+                       {"name": "Roar", "mp3": "sounds/roar.mp3", "ogg": "sounds/roar.ogg" },
+                       {"name": "Scream", "mp3": "sounds/scream.mp3", "ogg": "sounds/scream.ogg" },
+                       {"name": "Warewolf", "mp3": "sounds/snarl.mp3", "ogg": "sounds/snarl.ogg" },
+                       {"name": "Torture", "mp3": "sounds/tortured.mp3", "ogg": "sounds/tortured.ogg" },
+                       {"name": "Violin", "mp3": "sounds/violin.mp3", "ogg": "sounds/violin.ogg" },
+                       {"name": "Howl", "mp3": "sounds/wolfhowls.mp3", "ogg": "sounds/wolfhowls.ogg" }
+                    ];
+
+    $scope.halloweenPlay = function(index) {
+
+      var audioPlayer = document.getElementById(index);
+      
+      audioPlayer.play();
+    }
   }]);

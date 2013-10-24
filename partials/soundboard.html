@@ -1,0 +1,13 @@
+<div class="container mainContent">
+  <div class="row soundgrid" ng-repeat="sound in sounds" >
+    <div class="col-md-3 offset-1">
+        <button ng-click="halloweenPlay($index)" class="btn btn-danger btn-lg btn-block">{{ sound.name }}</button>
+    </div>
+  </div>
+</div>
+
+
+<audio ng-repeat="sound in sounds" id="{{ $index }}">
+  <source src="{{ sound.mp3 }}" />
+  <source src="{{ sound.ogg }}" />
+</audio>

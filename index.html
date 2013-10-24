@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Click or Treat is a silly little halloween game. Click the little ghost and earn level ups to help you automate clicking the little ghost. It is fun. Honest">
         <title ng-bind="'Click or Treat &mdash; ' + title"></title>
-        
-        
+
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,800" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Henny+Penny:400,300" rel="stylesheet" type="text/css">
@@ -28,6 +27,7 @@
                     <ul class="nav navbar-nav">
                         <li ng-class="{active: title=='Game'}"><a href="#/">Home</a></li>
                         <li ng-class="{active: title=='About'}"><a  href="#/about">About</a></li>
+                        <li ng-class="{active: title=='Halloween Soundboard'}"><a href="#/halloween-soundboard">Halloween Soundboard</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                       <li ng-controller="ResetController"><a ng-click="resetCookie()" href="#/">Reset</a></li>  
